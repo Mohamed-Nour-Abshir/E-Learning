@@ -98,16 +98,16 @@ class AdmissionController extends Controller
      */
     public function edit($id)
     {
-        $print = Admission::newPrintTask()
-            ->printer($id)
-            ->file('path_to_file.pdf')
-            ->send();
+        // $print = Admission::newPrintTask()
+        //     ->printer($id)
+        //     ->file('path_to_file.pdf')
+        //     ->send();
 
         // $printJob->id(); // the id number returned from the print server
         $course = Course::all();
         $batch = Batch::all();
         $admission = Admission::with('course', 'batch')->where('admissions.id', $id)->first();
-        return view('admin.admission.admission-update', compact('admission', 'batch', 'course', 'print'));
+        return view('admin.admission.admission-update', compact('admission', 'batch', 'course'));
     }
 
     /**

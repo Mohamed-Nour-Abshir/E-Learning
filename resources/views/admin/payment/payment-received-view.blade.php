@@ -50,13 +50,13 @@ E-Learning | Payment Received
                                                         <div class="col-6">
                                                             <div class="m-2">
                                                                 <label class="form-label"><b>Student Name</b></label>
-                                                                <input type="text" id="studentname" class="form-control form-control-lg" readonly>
+                                                                <input type="text" id="studentname" class="form-control form-control-lg" name="student_name" readonly>
                                                             </div>
                                                         </div>
                                                         <div class="col-6">
                                                             <div class="m-2">
                                                                 <label class="form-label"><b>Admission Date</b></label>
-                                                                <input type="date" id="date" class="form-control form-control-lg" readonly>
+                                                                <input type="date" id="date" class="form-control form-control-lg" name="admission_date" readonly>
                                                             </div>
                                                         </div>
                                                         <div class="col-6">
@@ -74,13 +74,13 @@ E-Learning | Payment Received
                                                         <div class="col-6">
                                                             <div class="m-2">
                                                                 <label class="form-label"><b>Student Email</b></label>
-                                                                <input type="email" id="email" class="form-control form-control-lg" readonly>
+                                                                <input type="email" id="email" class="form-control form-control-lg" name="student_email" readonly>
                                                             </div>
                                                         </div>
                                                         <div class="col-6">
                                                             <div class="m-2">
                                                                 <label class="form-label"><b>Student Phone Number</b></label>
-                                                                <input type="number" id="phone" class="form-control form-control-lg" readonly>
+                                                                <input type="number" id="phone" class="form-control form-control-lg" name="student_phone" readonly>
                                                             </div>
                                                         </div>
                                                     </div>
