@@ -33,7 +33,8 @@ class StudentPanelController extends Controller
     public function create()
     {
         $roles = Role::all();
-        $admission = Admission::doesnthave('user')->get();
+        // $admission = Admission::doesntHave('user')->get();
+        $admission = Admission::doesntHave('user')->get();
         return view('admin.student-panel.student-panel-create', compact('admission', 'roles'));
     }
 
@@ -55,21 +56,21 @@ class StudentPanelController extends Controller
             'designation' => 'required',
         ]);
 
-        if ($request->hasfile('course_image')) {
+        // if ($request->hasfile('course_image')) {
 
-            $image = $request->file('image');
-            $filename = $image->getClientOriginalName();
-            $image_resize = Image::make($image->getRealPath());
-            $image_resize->resize(350, 350);
-            $image_resize->save('profile-image/' . $filename);
-            $image->image = $filename;
-        }
+        $image = $request->file('image');
+        $filename = $image->getClientOriginalName();
+        $image_resize = Image::make($image->getRealPath());
+        $image_resize->resize(350, 350);
+        $image_resize->save('profile-image/' . $filename);
+        // }
 
         $studentpanel = new User([
             'admission_id' => $request->get('admission'),
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'phone' => $request->get('phone'),
+            'image' => $filename,
             'password' => Hash::make($request->get('password')),
             'designation' => ucfirst($request->get('designation')),
             'address' => $request->get('address'),

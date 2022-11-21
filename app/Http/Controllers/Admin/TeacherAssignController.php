@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Batch;
 use App\Models\Coursedetail;
+use App\Models\Designation;
 use App\Models\Teacher;
 use App\Models\Teacherassign;
 use Illuminate\Http\Request;

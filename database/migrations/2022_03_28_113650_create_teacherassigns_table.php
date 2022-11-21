@@ -15,12 +15,13 @@ class CreateTeacherassignsTable extends Migration
     {
         Schema::create('teacherassigns', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('designation_id')->unsigned();
-            $table->foreign('designation_id')->references('id')->on('designations')->cascadeOnDelete();
+            $table->string('designation')->nullable();
             $table->bigInteger('batch_id')->unsigned();
             $table->foreign('batch_id')->references('id')->on('batches')->cascadeOnDelete();
             $table->bigInteger('teacher_id')->unsigned();
             $table->foreign('teacher_id')->references('id')->on('teachers')->cascadeOnDelete();
+            $table->bigInteger('coursedetail_id')->unsigned();
+            $table->foreign('coursedetail_id')->references('id')->on('coursedetails')->cascadeOnDelete();
             $table->timestamps();
         });
     }

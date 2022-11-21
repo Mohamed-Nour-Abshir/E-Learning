@@ -16,7 +16,7 @@ class CreateAdmissionsTable extends Migration
         Schema::create('admissions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('studentID');
-            $table->bigInteger('course_id')->unsigned();
+            $table->bigInteger('course_id')->unsigned()->nullable();
             $table->foreign('course_id')->references('id')->on('courses')->cascadeOnDelete();
             $table->bigInteger('batch_id')->unsigned();
             $table->foreign('batch_id')->references('id')->on('batches')->cascadeOnDelete();
@@ -28,6 +28,7 @@ class CreateAdmissionsTable extends Migration
             $table->string('relationwith_emergency_phone');
             $table->string('name_ofrelation_number');
             $table->string('religion');
+            $table->string('gender');
             $table->string('blood_group');
             $table->string('nid');
             $table->longText('present_address');

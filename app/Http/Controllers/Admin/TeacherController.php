@@ -54,11 +54,11 @@ class TeacherController extends Controller
             'teacher_name' => $request->get('teacher_name'),
             'teacher_phone' => $request->get('teacher_phone'),
             'teacher_email' => $request->get('teacher_email'),
+            // 'teacher_designation' => $request->get('teacher_designation'),
             'teacher_address' => $request->get('teacher_address'),
             'teacher_skill' => $request->get('teacher_skill'),
             'teacher_image' => $filename,
             'teacher_about' => $request->get('teacher_about'),
-            // 'designation_id' => $request->get('teacher_designation'),
         ]);
         // dd($product);
         $teacher->save();

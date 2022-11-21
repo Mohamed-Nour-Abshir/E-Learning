@@ -40,7 +40,7 @@ E-Learning | Batch Lists View
                     $i = 0;
                     @endphp
                     @foreach($batchlist as $data)
-                    <!-- @dump($data->teacherassign[0]->teacher->teacher_name) -->
+                    {{-- @dump($data->teacherassign[0]->teacher->teacher_name)  --}}
                     <tr>
                         <td>
                             <p class="fw-normal mb-1">{{ ++$i }}</p>
@@ -73,16 +73,14 @@ E-Learning | Batch Lists View
                             <p class="fw-normal mb-1">{{ $data->start_date }}</p>
                         </td>
                         <td>
-                            <div class="
-                            <?php if ($data->status === 'Upcoming') { ?>
-                                text-info
-                                <?php } elseif ($data->status === 'Runing') { ?>
-                                    text-success
-                                    <?php } elseif ($data->status === 'Complete') { ?>
-                                        text-danger
-                                        <?php } elseif ($data->status === 'Full') { ?>
-                                            text-dark
-                                            <?php } ?>
+                            <div class="@if($data->status === 'Upcoming')
+                                text-info 
+                                @elseif ($data->status === 'Runing')
+                                    text-success 
+                                    @elseif ($data->status === 'Complete') 
+                                        text-danger 
+                                        @elseif ($data->status === 'Full') 
+                                            text-dark @endif
                             "><b>{{ $data->status }}</b></div>
                         </td>
                         <td>
