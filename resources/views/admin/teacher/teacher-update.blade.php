@@ -34,7 +34,7 @@ E-Learning | Edit Teacher Details
                             <input type="number" class="form-control form-control-lg" name="teacher_phone" value="{{ $teacher->teacher_phone }}">
                         </div>
                     </div>
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                         <div class="mb-2">
                             <label class="form-label">Teacher Designation</label>
                             <select name="teacher_designation" id="" class="form-control form-control-lg">
@@ -46,7 +46,7 @@ E-Learning | Edit Teacher Details
                                 @endforeach
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-12">
                         <div class="mb-2">
                             <label class="form-label"><b>Teacher Image</b></label>

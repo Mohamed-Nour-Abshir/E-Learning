@@ -18,7 +18,7 @@
 
         <!-- main body area -->
         <div class="main p-2 py-3 p-xl-5 ">
-
+            
             <!-- Body: Body -->
             @yield('content')
 
@@ -28,7 +28,6 @@
 
     <!-- Jquery Core Js -->
     <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
-
 </body>
 
 </html>

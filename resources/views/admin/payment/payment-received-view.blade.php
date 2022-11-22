@@ -9,7 +9,7 @@ E-Learning | Payment Received
 <div class="body d-flex py-lg-3 py-md-2">
     <div class="container-xxl">
         <div class="row clearfix g-3">
-            <form class="row g-1" action="{{ route('admission.store') }}" method="POST">
+            <form class="row g-1" action="{{ route('payment.store') }}" method="POST">
                 @csrf
                 <div class="col-lg-7 col-md-12 flex-column">
                     <div class="row row-deck g-3">
@@ -37,7 +37,7 @@ E-Learning | Payment Received
                                                         <div class="col-12">
                                                             <div class="m-2">
                                                                 <label class="form-label"><b>Student ID</b></label>
-                                                                <select name="studentID" class="form-control form-control-lg selectpicker" data-live-search="true" data-style="py-0" id="studentID">
+                                                                <select name="" class="form-control form-control-lg selectpicker" data-live-search="true" data-style="py-0" id="studentID">
                                                                     <option value="">Select Student ID</option>
                                                                     @foreach($admission as $item)
                                                                     <option value="{{ $item->id }}">
@@ -45,6 +45,12 @@ E-Learning | Payment Received
                                                                     </option>
                                                                     @endforeach
                                                                 </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="m-2">
+                                                                <label class="form-label"><b>Student Roll No</b></label>
+                                                                <input type="text" id="studentRollNo" class="form-control form-control-lg" name="studentID" readonly>
                                                             </div>
                                                         </div>
                                                         <div class="col-6">
@@ -63,12 +69,14 @@ E-Learning | Payment Received
                                                             <div class="m-2">
                                                                 <label class="form-label"><b>Course Name</b></label>
                                                                 <input type="text" id="course" class="form-control form-control-lg" readonly>
+                                                                <input type="text" id="course-id" class="form-control form-control-lg" name="course" hidden>
                                                             </div>
                                                         </div>
                                                         <div class="col-6">
                                                             <div class="m-2">
                                                                 <label class="form-label"><b>Batch Name</b></label>
                                                                 <input type="text" id="batch" class="form-control form-control-lg" readonly>
+                                                                <input type="text" id="batch-id" class="form-control form-control-lg" name="batch" hidden>
                                                             </div>
                                                         </div>
                                                         <div class="col-6">
@@ -132,7 +140,7 @@ E-Learning | Payment Received
                                                             <div class="col-12">
                                                                 <div class="m-2">
                                                                     <label class="form-label"><b>Received Amount (BDT)</b></label>
-                                                                    <input type="text" id="receivedamount" class="form-control form-control-lg" value="">
+                                                                    <input type="text" id="receivedamount" class="form-control form-control-lg" name="received_amount" value="">
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 text-right m-2 mt-4">
@@ -181,10 +189,12 @@ E-Learning | Payment Received
                 success: function(data) {
 
                     console.log(data);
-
+                    $('#studentRollNo').val(data.admissionID[0].studentID);
                     $('#studentname').val(data.admissionID[0].student_name);
                     $('#date').val(data.admissionID[0].date);
+                    $('#course-id').val(data.admissionID[0].course.id);
                     $('#course').val(data.admissionID[0].course.course_name);
+                    $('#batch-id').val(data.admissionID[0].batch.id);
                     $('#batch').val(data.admissionID[0].batch.batch_name);
                     $('#email').val(data.admissionID[0].student_email);
                     $('#phone').val(data.admissionID[0].student_phone);

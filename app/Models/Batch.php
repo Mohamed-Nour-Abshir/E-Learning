@@ -30,4 +30,8 @@ class Batch extends Model
     {
         return $this->hasMany(Admission::class);
     }
+    public function payment()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

@@ -116,7 +116,7 @@ class TeacherController extends Controller
         $teacher->teacher_name = $request->teacher_name;
         $teacher->teacher_email = $request->teacher_email;
         $teacher->teacher_phone = $request->teacher_phone;
-        $teacher->designation_id = $request->teacher_designation;
+        // $teacher->designation_id = $request->teacher_designation;
         $teacher->teacher_address = $request->teacher_address;
         $teacher->teacher_skill = $request->teacher_skill;
         $teacher->teacher_about = $request->teacher_about;

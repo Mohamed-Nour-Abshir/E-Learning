@@ -48,6 +48,7 @@ Route::group(['prefix' => 'home', 'namespace' => 'Admin'], function () {
     Route::post('change-password', 'ChangePasswordController@changePassword')->name('change.password');
     Route::post('user-info', 'CourseApiController@userInfo')->name('user-info');
     Route::get('payment-received', 'PaymentReceivedController@index')->name('payment.index');
+    Route::post('payment-received-show', 'PaymentReceivedController@store')->name('payment.store');
     Route::post('admission-details', 'CourseApiController@admissionDetails')->name('admission-details');
     Route::resource('accounts', 'AccountsController');
     Route::resource('settings', 'SettingsController');

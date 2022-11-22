@@ -56,7 +56,7 @@ $user = Auth::guard('web')->user();
                             <p class="fw-normal mb-1">BDT. {{ $data->course->course_price }}</p>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1">{{ $data->course->course_lessons }}</p>
+                            <p class="fw-normal mb-1">{{ $data->course->course_lessons }} Lessons</p>
                         </td>
                         <td class="d-flex mt-3">
                             @if($user->can('Course Details Show'))
